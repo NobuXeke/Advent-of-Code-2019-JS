@@ -103,12 +103,14 @@ let mass = [
 function calculateFuel(mass) {
 	let totalFuel = 0;
 	mass.forEach(x => {
+		let moduleFuel = 0;
 		while (x > 0) {
 			x = Math.floor(x / 3) - 2;
 			if (x > 0) {
-				totalFuel += x;
+				moduleFuel += x;
 			}
 		}
+		totalFuel += moduleFuel;
 	});
 	return totalFuel;
 }
