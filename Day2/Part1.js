@@ -140,16 +140,16 @@ let intcode = [
 
 function restoreGravityAssistProgram(array) {
 	for (let i = 0; i < array.length; i += 4) {
-		let opcode = intcode[i];
-		let position1 = intcode[i + 1];
-		let position2 = intcode[i + 2];
-		let position3 = intcode[i + 3];
+		let opcode = array[i];
+		let position1 = array[i + 1];
+		let position2 = array[i + 2];
+		let position3 = array[i + 3];
 		if (opcode === 1) {
-			intcode[position3] = intcode[position1] + intcode[position2];
+			array[position3] = array[position1] + array[position2];
 		} else if (opcode === 2) {
-			intcode[position3] = intcode[position1] * intcode[position2];
+			array[position3] = array[position1] * array[position2];
 		} else if (opcode === 99) {
-			return intcode;
+			return array;
 		} else {
 			console.log("Something went wrong.");
 		}
