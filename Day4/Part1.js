@@ -13,7 +13,6 @@ function findPossiblePasswords() {
 						break;
 					}
 				}
-				break;
 			}
 		}
 	}
